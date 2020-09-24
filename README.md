@@ -309,7 +309,66 @@ plot_svc_decision_function(model);
 ```
 ![title](Input/SVM2.png)
 
+# Dataset
 
+Τις εικόνες με τις γάτες και σκύλους μπορούμε να τις καταβάσουμε απο αυτόν τον σύνδεσμο [Cats & dogs dataset](https://www.microsoft.com/en-us/download/details.aspx?id=54765)
+
+H δομή:
+<nobr>
+Dataset
+|
++ ---80_20
+     |
+     + ----- Test
+     |        |   
+     |        + ---- Cat
+     |        |       |
+     |        |       + ---- 0000.jpg
+     |        |
+     |        + ---- Dog
+     |                |
+     |                + ---- 0000.jpg
+     |
+     +----- Train
+     |        |   
+     |        + ---- Cat
+     |        |       |
+     |        |       + ---- 0000.jpg
+     |        |
+     |        + ---- Dog
+     |                |
+     |                + ---- 0000.jpg
+     |
+     +---- Validation
+             |   
+             + ---- Cat
+             |       |
+             |       + ---- 0000.jpg
+             |
+             + ---- Dog
+                     |
+                     + ---- 0000.jpg
+   
+   
+```bash
+C:.
+└───80_20
+    ├───Test
+    │   ├───Cat
+    |   |    ├─── 0000.jpg
+    │   └───Dog
+    |        ├─── 0000.jpg
+    ├───Train
+    │   ├───Cat
+    |   |    ├─── 0000.jpg
+    │   └───Dog
+    |        ├─── 0000.jpg
+    └───Validation
+        ├───Cat
+        |    ├─── 0000.jpg
+        └───Dog
+             ├─── 0000.jpg
+```
 # Αποτελέσματα
 
 Στην διάθεση μας έχουμε εικόνες από σκύλους και γάτες. Παρακάτω εμφανίζουμε ένα
@@ -322,7 +381,7 @@ plot_svc_decision_function(model);
   </tr>
   <tr>
     <td><img src="Input/cat1.jpg" width=270 height=300></td>
-    <td><img src="Input/cat2.jpg" width=270 height=300></td>
+    <td><img src="Input/cat2.jpg" width=270 height=300></td>\\
   </tr>
  </table>
  
