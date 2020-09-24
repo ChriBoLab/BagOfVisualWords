@@ -1,4 +1,4 @@
-None
+
 # ΕΙΣΑΓΩΓΗ
 
 
@@ -56,12 +56,9 @@ None
 Για να μετρήσουμε την απόδοση του κάθε μοντέλου θα χρησιμοποιούμε τις παρακάτω
 συναρτήσεις.
 
-    1. Precision: πόσα από τα παραδείγματα που το μοντέλο υπολόγισε ότι ανήκαν
-στην ομάδα Χ, ανήκαν όντως στην ομάδα Χ.
-    2. Recall: από το σύνολο των παραδειγμάτων που ανήκαν στην ομάδα Χ, πόσα
-ανέκτησε το μοντέλο.
-    3. F1 score: αρμονικός μέσος των precision και recall. Βοηθά στο να έχουμε
-μια γενική ιδέα της απόδοσης του μοντέλου.
+    1. Precision: πόσα από τα παραδείγματα που το μοντέλο υπολόγισε ότι ανήκαν στην ομάδα Χ, ανήκαν όντως στην ομάδα Χ.
+    2. Recall: από το σύνολο των παραδειγμάτων που ανήκαν στην ομάδα Χ, πόσα ανέκτησε το μοντέλο.
+    3. F1 score: αρμονικός μέσος των precision και recall. Βοηθά στο να έχουμε μια γενική ιδέα της απόδοσης του μοντέλου.
 
 ## **k-Nearest Neighbors**
 
@@ -95,12 +92,12 @@ A5=(7,5), A6=(6,4), A7=(1,2), A8=(4,9) και εχουμε επιλεξει οτ
 ποιο σημείο έχει την μικρότερη απόσταση το κάθε στοιχείο και το κατατάσουμε στην
 ομάδα.
 
-![title](Input/Run1.png)
 ![title](Input/result_1.png)
+![title](Input/Run1.png)
+
 
 Το δεύτερο βήμα είναι να υπολογίσουμε την μέση τιμή για τα x1, x2 της κάθε
-ομάδας. Και να
-ορίσουμε το αποτέλεσμα ως νέο κέντρο της συστάδας.
+ομάδας. Και ναορίσουμε το αποτέλεσμα ως νέο κέντρο της συστάδας.
 
     cluster 1 : (2, 10)
     cluster 2: (6, 6)
@@ -116,8 +113,7 @@ A5=(7,5), A6=(6,4), A7=(1,2), A8=(4,9) και εχουμε επιλεξει οτ
 
 ![title](Input/result_3.png)
 
-μετά την τέταρτη επανάληψη τα νέα κέντρα θα είναι C1(3.66 ,9), C2=(7, 4.33) και
-C3=(1.5, 3.5)
+μετά την τέταρτη επανάληψη τα νέα κέντρα θα είναι C1(3.66 ,9), C2=(7, 4.33) και C3=(1.5, 3.5)
 
 ![title](Input/result_4.png)
 
@@ -258,6 +254,8 @@ for m, b in [(-0.4, 1.6), (-1.5, 2.5), (0, 1.3)]:
 plt.show()
 ```
 
+<img  src="Input/SVM1.png" />
+
  Ένας απλός ταξινομητής θα προσπαθούσε να σχεδιάσει μια γραμμή διαχωρίζοντας τα
 δύο σύνολα δεδομένων και έτσι να δημιουργήσει ένα μοντέλο ταξινόμησης.
 
@@ -309,44 +307,59 @@ plt.text(0.8, 1.25, str, fontsize=12,
 plot_svc_decision_function(model);
 
 ```
+![title](Input/SVM2.png)
 
+# Dataset
+
+Τις εικόνες με τις γάτες και σκύλους μπορούμε να τις καταβάσουμε απο αυτόν τον σύνδεσμο [Cats & dogs dataset](https://www.microsoft.com/en-us/download/details.aspx?id=54765)
+
+H δομή:   
+   
+```bash
+C:.
+└───80_20
+    ├───Test
+    │   ├───Cat
+    |   |    ├─── 0000.jpg
+    │   └───Dog
+    |        ├─── 0000.jpg
+    ├───Train
+    │   ├───Cat
+    |   |    ├─── 0000.jpg
+    │   └───Dog
+    |        ├─── 0000.jpg
+    └───Validation
+        ├───Cat
+        |    ├─── 0000.jpg
+        └───Dog
+             ├─── 0000.jpg
+```
 # Αποτελέσματα
 
 Στην διάθεση μας έχουμε εικόνες από σκύλους και γάτες. Παρακάτω εμφανίζουμε ένα
 δείγμα από αυτές:
 
-```python
-from matplotlib import rcParams
-import matplotlib.image as mpimg 
-import os
-
-%matplotlib inline
-def showImages(subfolder):
-    rcParams['figure.figsize'] = 10 ,10
-    path = r"C:\Users\Christos\Jupyter\Vision\Ask3\Dataset"
-    path = path + '\\' +  subfolder
-    Images = ( [
-        x for x in os.listdir(path)
-        if os.path.isfile(os.path.join(path , x))
-    ])
-    ROW = 3
-    COLUMN = 2
-    for i in range(6):
-        image = mpimg.imread(path + '\\' + Images[i]) 
-        plt.subplot(ROW, COLUMN, i+1)
-        plt.imshow(image)  
-        plt.axis('off')  # do not show axis value
-    plt.tight_layout()   # automatic padding between subplots
-    plt.show()
-```
-
-```python
-showImages(r"Test\Cat")
-```
-
-```python
-showImages(r"Test\Dog")
-```
+<table>
+  <tr>
+    <td></td>
+     <td></td>
+  </tr>
+  <tr>
+    <td><img src="Input/cat1.jpg" width=270 height=300></td>
+    <td><img src="Input/cat2.jpg" width=270 height=300></td>\\
+  </tr>
+ </table>
+ 
+ <table>
+  <tr>
+    <td></td>
+     <td></td>
+  </tr>
+  <tr>
+    <td><img src="Input/dog1.jpg" width=270 height=300></td>
+    <td><img src="Input/dog2.jpg" width=270 height=300></td>
+  </tr>
+ </table>
 
 ## Κ Means - 500 images
 
