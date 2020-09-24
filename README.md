@@ -313,42 +313,7 @@ plot_svc_decision_function(model);
 
 Τις εικόνες με τις γάτες και σκύλους μπορούμε να τις καταβάσουμε απο αυτόν τον σύνδεσμο [Cats & dogs dataset](https://www.microsoft.com/en-us/download/details.aspx?id=54765)
 
-H δομή:
-<nobr>
-Dataset
-|
-+ ---80_20
-     |
-     + ----- Test
-     |        |   
-     |        + ---- Cat
-     |        |       |
-     |        |       + ---- 0000.jpg
-     |        |
-     |        + ---- Dog
-     |                |
-     |                + ---- 0000.jpg
-     |
-     +----- Train
-     |        |   
-     |        + ---- Cat
-     |        |       |
-     |        |       + ---- 0000.jpg
-     |        |
-     |        + ---- Dog
-     |                |
-     |                + ---- 0000.jpg
-     |
-     +---- Validation
-             |   
-             + ---- Cat
-             |       |
-             |       + ---- 0000.jpg
-             |
-             + ---- Dog
-                     |
-                     + ---- 0000.jpg
-   
+H δομή:   
    
 ```bash
 C:.
